@@ -24,6 +24,7 @@ func (a *App) setRouters(){
 
 	a.Get("/download/{id}/{type}", a.getFile)
 	a.Get("/getToken", a.GetToken)
+	a.Get("/", a.init)
 }
 
 // Wrap the router for GET method
