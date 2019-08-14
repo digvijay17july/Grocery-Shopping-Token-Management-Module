@@ -21,7 +21,8 @@ func (a *App) Initialize() {
 
 func (a *App) setRouters(){
 	fmt.Println("initializing request")
-	a.Get("/", a.init)
+
+	a.Get("/download/{id}/{type}", a.getFile)
 	a.Get("/getToken", a.GetToken)
 }
 
@@ -45,5 +46,9 @@ func (a *App) Run(host string) {
 }
 
 func (a *App)init(w http.ResponseWriter, r *http.Request){
-	fmt.Fprintf(w, "Hello")
+	fmt.Fprint(w,"hello")
+}
+
+func (a *App)getFile(w http.ResponseWriter, r *http.Request){
+	service.DownloadFunction(w,r)
 }
