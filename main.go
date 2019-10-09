@@ -9,5 +9,11 @@ import (
 func main(){
 	app:= api.App{}
 	app.Initialize()
-	app.Run(":8080")
+	port := os.Getenv("PORT")
+	if len(port) == 0 {
+		port = "8080"
+	}
+	app.Run(":"+port)
+	
+	
 }
