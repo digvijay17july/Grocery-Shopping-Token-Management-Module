@@ -47,7 +47,7 @@ func (a *App) Run(host string) {
 }
 
 func (a *App)init(w http.ResponseWriter, r *http.Request){
-	fmt.Fprint(w,"hello")
+	fmt.Fprint(w,"<html><h1>This is a SAMPLE HTML Page For EPFO</h1><br><h2>Hosted on Openshift</h2></html>")
 }
 
 func (a *App)getFile(w http.ResponseWriter, r *http.Request){
