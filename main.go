@@ -9,7 +9,5 @@ import (
 func main(){
 	app:= api.App{}
 	app.Initialize()
-	port := os.Getenv("PORT")
-	fmt.Println("Port No. is :"+port)
-	app.Run(":"+port)
+	app.Run(":8080")
 }
